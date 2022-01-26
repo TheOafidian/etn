@@ -27,9 +27,9 @@ This git repository markdown page will be used to document the project steps in 
 
 ## Version Control of Code
 
-The code will be stored in this private git repository. 
-Access will be given to the internal and external traineeship coordinators before the start of the traineeship.   
-[Repository link](https://github.com/TVR-AelinTX/traineeship)
+The code will be stored in [this private git repository](https://github.com/TVR-AelinTX/traineeship). 
+Access will be given to the internal and external traineeship coordinators before the start of the traineeship. 
+Links to scripts pertaining to tasks and subtasks of the traineeship will be provided in the ETN and can be accessed by the authorized coordinators.
 
 # Background Information on the traineeship topic <a name="background"></a>
 
