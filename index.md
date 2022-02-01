@@ -5,8 +5,8 @@
 2. [Background information on the traineeship topic](#background)
 3. [Personal Development](#pers-dev)
 4. [Tasks](#tasks)  
-  a) [Placeholder1]()  
-  b) [Placeholder2]()  
+  - [ ] [Exploration of raw data formats from HPLC instrument](#task1)  
+  - [ ] [Download and install Delphi repository](#task2)  
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -36,8 +36,15 @@ Links to scripts pertaining to tasks and subtasks of the traineeship will be pro
 # Personal Development <a name="pers-dev"></a>
 
 # Tasks <a name="tasks"></a>
--[ ] Exploration of raw data formats from HPLC instrument 01/02/2022
--[ ] Download and install Delphi repository (ELN based on Ontoforce's Disqover platform) 01/02/2022  
+## Exploration of raw data formats from HPLC instrument 01/02/2022 <a name="task1"></a>
+  01/02/2022: First look at the data with exploratory [jupyter notebook](https://github.com/TVR-AelinTX/traineeship/blob/main/data_exploration/HPLC/HPLC%20Data.ipynb)
+  
+## Download and install Delphi repository (ELN based on Ontoforce's Disqover platform) 01/02/2022 <a name="task2"></a>
+  01/02/2022: 
+  Download repo and installing dependencies.
+  Install, explore and use Pycharm. Issues using WSL interpreter (only supported in professional version). 
+  Continued using VS Code for now, perhaps come back to pyCharm later.
+  
 
 [//]: # (Intermediate Evaluation Traineeship)
 
