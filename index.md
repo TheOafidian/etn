@@ -36,6 +36,8 @@ Links to scripts pertaining to tasks and subtasks of the traineeship will be pro
 # Personal Development <a name="pers-dev"></a>
 
 # Tasks <a name="tasks"></a>
+-[ ] Exploration of raw data formats from HPLC instrument 01/02/2022
+-[ ] Download and install Delphi repository (ELN based on Ontoforce's Disqover platform) 01/02/2022  
 
 [//]: # (Intermediate Evaluation Traineeship)
 
