@@ -50,7 +50,7 @@ The DELPHI platform is AelinTx's source for data and information related to ongo
 ## Exploration of raw data formats from HPLC instrument <a name="task1"></a>
   **01/02/2022**: First look at the data with exploratory [jupyter notebook](https://github.com/TVR-AelinTX/traineeship/blob/main/data_exploration/HPLC/HPLC%20Data.ipynb)
   
-## Download and install Delphi repository (ELN based on Ontoforce's Disqover platform) <a name="task2"></a>
+## Download and install Delphi repository <a name="task2"></a>
   **01/02/2022**: 
   Download repo and installing dependencies.
   
