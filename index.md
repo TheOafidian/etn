@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Traineeship Documentation Plan](#TDP)
-2. [Background information on the traineeship topic](#background)
+2. [Background information traineeship topic](#background)
 3. [Personal Development](#pers-dev)
 4. [Tasks](#tasks)  
   - [ ] [Exploration of raw data formats from HPLC instrument](#task1)  
@@ -38,7 +38,7 @@ The code will be stored in [this private git repository](https://github.com/TVR-
 Access will be given to the internal and external traineeship coordinators before the start of the traineeship. 
 Links to scripts pertaining to tasks and subtasks of the traineeship will be provided in the ETN and can be accessed by the authorized coordinators.
 
-# Background Information on the traineeship topic <a name="background"></a>
+# Background Information traineeship topic <a name="background"></a>
 
 ## HPLC
 For the purification of the peptides manufactured in the lab, a method on a Reverse Phase High Performance Liquid Chromatography (RP-HPLC) system is used. The reverse phase points to the fact that a hydrophobic stationary phase is used, while the mobile phase initially is more hydrophilic in nature. The peptide is dissolved and injected with a constant flow of mobile phase into a column, the stationary phase. After several minutes the gradient of the mobile phase is shifted towards a more hydrophobic end. The peptide and its impurities bound to the column then each have their own 'sweet spot' of hydrophobicity where they will start prefering the mobile phase over the column and they will elute. This principle is used to separate the peptide of interest from any unwanted side-products from synthesis.
