@@ -5,7 +5,7 @@
 2. [Background information traineeship topic](#background)
 3. [Personal Development](#pers-dev)
 4. [Tasks](#tasks)  
-  - [ ] [Exploration of raw data formats from HPLC instrument](#task1)  
+  - [x] [Exploration of raw data formats from HPLC instrument](#task1)  
   - [x] [Download and install DELPHI repository](#task2)
   - [ ] [Create a "visitor" for raw HPLC data and generate tsv file](#task3)
   - [ ] [Deal with compressed data HPLC files](#task4)
@@ -20,10 +20,9 @@
 # Traineeship Documentation Plan <a name="TDP"></a>
 
 ## Tentative Planning
-- Which tasks to perform during traineeship (brief)
-- When are tasks planned to be performed
 - Look into DELPHI the Disqover data platform that serves as AelinTx's one stop shop for data on research & development activities. -> Current priority
 - Find a way to decompress .lcra files. -> Halfway through the traineeship?
+- Upload of UPLC data -> in a few weeks
 
 ## Data Management
 - How and where will data be stored and structured? (FAIR)
@@ -52,43 +51,62 @@ The DELPHI platform is AelinTx's source for data and information related to ongo
 
 # Tasks <a name="tasks"></a>
 ## Exploration of raw data formats from HPLC instrument <a name="task1"></a>
-  **01/02/2022**: First look at the data with exploratory [jupyter notebook](https://github.com/TVR-AelinTX/traineeship/blob/main/data_exploration/HPLC/HPLC%20Data.ipynb)
-  
-  **08/02/2022**: Fixing further issues with the parsing of the .lcra files. Script should be simplified, but entanglement of different samples in one file and no clear way to link them makes this difficult...
-  
+### 01/02/2022: 
+First look at the data with exploratory [jupyter notebook](https://github.com/TVR-AelinTX/traineeship/blob/main/data_exploration/HPLC/HPLC%20Data.ipynb)
+
+### 08/02/2022: 
+Fixing further issues with the parsing of the .lcra files. Script should be simplified, but entanglement of different samples in one file and no clear way to link them makes this difficult...
+### 10/02/2022: 
+Extracting raw data using pandas.read_xml to get a clearer dataframe to start with. 
+A setting in the package needs to be adapted however to allow handling files of this size.
+
 ## Download and install Delphi repository <a name="task2"></a>
-  **01/02/2022**: 
-  Download repo and installing dependencies.
-  
-  Install, explore and use Pycharm. Issues using WSL interpreter (only supported in professional version). 
-  Continued using VS Code for now, perhaps come back to pyCharm later.
-  
-  **08/02/2022**:
-  Facing issues testing out the visitor script using VSCode. Tried switching to PyCharm again, using WSL graphic interface. Ran into issues due to not being able to contact graphic server (firewall issues?). 
+### 01/02/2022: 
+Download repo and installing dependencies.
+
+Install, explore and use Pycharm. Issues using WSL interpreter (only supported in professional version). 
+Continued using VS Code for now, perhaps come back to pyCharm later.
+
+### 08/02/2022:
+Facing issues testing out the visitor script using VSCode. Tried switching to PyCharm again, using WSL graphic interface. Ran into issues due to not being able to contact graphic server (firewall issues?). 
+### 10/02/2022:
+Sat together with external coordinator and fixed the issue. 
 
 ## Create a "visitor" that checks for new HPLC experiments on the server. <a name="task3"></a>
-  **03/02/2022**:
-   Mock directory containing some raw files that aren't compressed made to target wit ha visitor script. 
-   
-   "Visitors" are a python object that looks at folders and retrieves new, updated files according to some specifications. A visitor for the HPLC data would need to be made that  tracks changes in raw .lcra files during DELPHI's data ingestion.
 
-**08/02/2022**:
-Incorporated methods distilled from the data exploration into the visitor script. Needs more work refining and restructuring.
+Link to copy of script that has been encapsulated in the DELPHI structure: [hplc_visitor.py](https://github.com/TVR-AelinTX/traineeship/blob/main/hplc/hplc_visitor.py)
 
+### 03/02/2022:
+Mock directory containing some raw files that aren't compressed made to target with a visitor script. 
+
+"Visitors" are a python object that looks at folders and retrieves new, updated files according to some specifications. A visitor for the HPLC data would need to be made that  tracks changes in raw .lcra files during DELPHI's data ingestion.
+
+### 08/02/2022:
+Incorporated methods distilled from the data exploration into the visitor script. Needs more work refining and restructuring. Issues testing code on local computer.
+
+### 10/02/2022:
+Fixed issues testing visitor script on local computer. Issue not clearly defined, but seems to be related to naming conventions of folders (to keep in mind!). 
+
+Script was appended with new methods and debugged to a workable state. More finetuning needed by adding a lookup file before execution of the script. The script now generates plots for all the peptides in a .lcra file. It uses a standard gradient (can be improved by selecting the right gradient) for now as most often the HPLC runs use the same gradient and identifying the gradient with the run proves not to be straightforward, as gradients of preparatory and finishing gradients are also recorded. The plots look good on most runs, altough some seem to be missing fractions (to be investigated). The plots could also be prettified further.
 
 ## Deal with compressed .lcra raw HPLC files. <a name="task4"></a>
-  **03/02/2022**:
-  Some .lcra files exported from the machine undergo a compression to reduce the impact fo their size on the system. 
-  
-  Finding a way to read these compressed files is needed to    visualize the chromatograms contained in them. No immediate settings were found to prevent this behaviour on the machine, so the company was contacted.
-  
-  Some settings in the data acquisition could help generate reports with the needed data. This should first be investigated, alternatively the data is compressed on sql level and the company providing the sql database could be contacted by the supplier of the instrument for further help.
-  **08/02/2022**:
-  Asked to contact the company providing the sql database interaction from the software.
-  
+### 03/02/2022:
+Some .lcra files exported from the machine undergo a compression to reduce the impact fo their size on the system. 
+
+Finding a way to read these compressed files is needed to    visualize the chromatograms contained in them. No immediate settings were found to prevent this behaviour on the machine, so the company was contacted.
+
+Some settings in the data acquisition could help generate reports with the needed data. This should first be investigated, alternatively the data is compressed on sql level and the company providing the sql database could be contacted by the supplier of the instrument for further help.
+
+### 08/02/2022:
+Asked to contact the company providing the sql database interaction from the software.
+
 ## Exploration raw UPLC Data. <a name="task5"></a>
-**08/02/2022**:
+### 08/02/2022:
 Handling the UPLC raw data is much more straightforward. It can be exported in two .txt files per QC run performed. One file contains raw measurements to recreate the chromatogram, the other the area under the curve (AUC) per retention time calculated by the software of the UPLC.
+
+## Align on need for UPLC data upload format. <a name="task6"></a>
+### 10/02/2022:
+The possibility of uploading the UPLC data was discussed and the QC representative showed an interest, but wanted to first set in place more methods (Ion Chromatography) to analyze the peptides, which could be added to the reporting.
 
 [//]: # (Intermediate Evaluation Traineeship)
 
