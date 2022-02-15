@@ -10,7 +10,8 @@
   - [ ] [Create a "visitor" for raw HPLC data and generate tsv file](#task3)
   - [ ] [Deal with compressed data HPLC files](#task4)
   - [x] [Exploration raw UPLC data](#task5)
-  - [ ] [Align on need for UPLC data upload format](#task6)   
+  - [ ] [Align on need for UPLC data upload format](#task6)
+  - [ ] [Meta-Analysis UPLC data](#task7)   
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -23,6 +24,7 @@
 - Look into DELPHI the Disqover data platform that serves as AelinTx's one stop shop for data on research & development activities. -> Current priority
 - Find a way to decompress .lcra files. -> Halfway through the traineeship?
 - Upload of UPLC data -> in a few weeks
+- Upload external Ion Chromatography data -> prioritized
 
 ## Data Management
 - How and where will data be stored and structured? (FAIR)
@@ -104,9 +106,21 @@ Asked to contact the company providing the sql database interaction from the sof
 ### 08/02/2022:
 Handling the UPLC raw data is much more straightforward. It can be exported in two .txt files per QC run performed. One file contains raw measurements to recreate the chromatogram, the other the area under the curve (AUC) per retention time calculated by the software of the UPLC.
 
+### 15/02/2022:
+UPLC data was explored. The software can spit out .txt files of the raw data and integration results. Parsing of both files and retrieving the interesting data with python is quite effective.
+
 ## Align on need for UPLC data upload format. <a name="task6"></a>
 ### 10/02/2022:
 The possibility of uploading the UPLC data was discussed and the QC representative showed an interest, but wanted to first set in place more methods (Ion Chromatography) to analyze the peptides, which could be added to the reporting.
+
+### 15/02/2022:
+The need for upload of externally acquired Ion Chromatography data was adressed in a meeting. After sitting together with the external project coordinator, it was decided to work on this first. This is achieved by utilizing upload schemes of the DELPHI platform (xlsx files defining fields of pandas dataframes, templates, etc) and some internal logic.
+
+## Meta Analysis UPLC data. <a name="task7"></a>
+### 15/02/2022:
+For two different methods the absorbance is measured at wavelengths 210nm and 216nm respectively. It would be easy to unionize this reading by only looking at one of both wavelengths. Therefore an analysis of previous UPLC runs needs to be made to show that the resulting purity(%) values between the two different wavelength measurements does not differ significantly.
+
+A bash script was written to pick up and put together the files from a list of exported files. A python script is written that extracts retention time, sample name and detector wavelength. Next step is to compare both groups statistically.
 
 [//]: # (Intermediate Evaluation Traineeship)
 
