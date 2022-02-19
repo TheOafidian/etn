@@ -28,11 +28,17 @@
 - Upload external Ion Chromatography data -> prioritized
 
 ## Data Management
-- How and where will data be stored and structured? (FAIR)
-- Data will be visualized using the DELPHI platform, ensuring adherence to the FAIR principles upon which it is heavily inspired. The raw lcms data will be stored in a subfolder in "compound creation experiment" folders on the shared server, as a sibling to a lookup file pertaining the synthesis and purification of the compound. 
+Data about the progress of the traineeship project will be stored according to the FAIR principles in this ETN.
+- Findable
+Different tasks are listed at the start of the ETN and linked to their respective headers within the ETN. Where possible a link to code written for the traineeship is supplied at the start of the task. 
+- Accessible
+The ETN is publicly available adn a link is shared with the project coordinators. The repository of the code is stored in a private git repository that requires authentication and only the project coordinators will be allowed access as some of the data stored is not meant to be publicized.
+- Interoperable
+
+- Reusable
 
 ## Traceability of Steps and Methods
-This git repository markdown page will be used to document the project steps in a traceable manner.
+This git repository markdown page will be used to document the project steps and changes in the project in a traceable manner.
 
 ## Version Control of Code
 
@@ -122,6 +128,21 @@ The need for upload of externally acquired Ion Chromatography data was adressed 
 For two different methods the absorbance is measured at wavelengths 210nm and 216nm respectively. It would be easy to unionize this reading by only looking at one of both wavelengths. Therefore an analysis of previous UPLC runs needs to be made to show that the resulting purity(%) values between the two different wavelength measurements does not differ significantly.
 
 A bash script was written to pick up and put together the files from a list of exported files. A python script is written that extracts retention time, sample name and detector wavelength. Next step is to compare both groups statistically.
+
+### 17/02/2022:
+A first exploratory visual analysis of the data reveals some differences between both readings for some samples. The distribution of the differences was tested for normalcy and the null hypothesis that the distribution was normal was rejected at a significance of 0.05.
+
+## Upload Ion Chromatography data to DELPHI platform <a name="task8"></a>
+### 15/02/2022:
+A basic scheme for uploading data on the resulting ion percentages from ion chromatography experiments is made to allow upload onto the DELPHI platform. Upload schemes consist of excel sheets defining input and output fields for the data that is read from an excel template. These schemes are used by the internal logic of DELPHI in the form of python script to pre-process, ingest and display the data on the web platform.
+
+Some basic logic is added to the script to preprocess the data.
+
+## 17/02/2022:
+The scheme is updated with fields for the date of upload, the person uploading the data and the location of the data to ensure traceability.
+
+The internal logics are also polished with some data validation and cleanup to allow a more robust pre-processing. Ideas for future improvements: classification by main ion, comparison of salt_state vs experimental_salt_state.
+
 
 [//]: # (Intermediate Evaluation Traineeship)
 
