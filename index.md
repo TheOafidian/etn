@@ -5,13 +5,14 @@
 2. [Background information traineeship topic](#background)
 3. [Personal Development](#pers-dev)
 4. [Tasks](#tasks)  
-  - [x] [Exploration of raw data formats from HPLC instrument](#task1)  
-  - [x] [Download and install DELPHI repository](#task2)
-  - [ ] [Create a "visitor" for raw HPLC data and generate tsv file](#task3)
-  - [ ] [Deal with compressed data HPLC files](#task4)
-  - [x] [Exploration raw UPLC data](#task5)
-  - [ ] [Align on need for UPLC data upload format](#task6)
-  - [ ] [Meta-Analysis UPLC data](#task7)   
+    4.1. [Exploration of raw data formats from HPLC instrument](#task1) ✔️  
+    4.2. [Download and install DELPHI repository](#task2) ✔️  
+    4.3. [Create a "visitor" for raw HPLC data and generate tsv file](#task3) 🔲  
+    4.4. [Deal with compressed data HPLC files](#task4) 🔲  
+    4.5. [Exploration raw UPLC data](#task5) ✔️  
+    4.6. [Align on need for UPLC data upload format](#task6) 🔲  
+    4.7. [Meta-Analysis UPLC data](#task7) 🔲   
+    4.8. [Upload Ion Chromatography data](#task8) 🔲
 
 [//]: # (Intermediate Evaluation Traineeship)
 
