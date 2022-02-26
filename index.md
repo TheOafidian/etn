@@ -215,3 +215,10 @@ The code was tested on the production server and yielded no errors. The change w
 [//]: # (Self Assessment at the End of Traineeship)
 
 [//]: # (Reflection on International/Intercultural Aspects)
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(255, 82, 82)',
+  textColor: '#fff'
+})</script>
