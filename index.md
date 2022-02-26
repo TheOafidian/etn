@@ -61,6 +61,8 @@ Links to scripts pertaining to tasks and subtasks of the traineeship will be pro
 For the purification of the peptides manufactured in the lab, a method on a Reverse Phase High Performance Liquid Chromatography (RP-HPLC) system is used. The reverse phase points to the fact that a hydrophobic stationary phase is used, while the mobile phase initially is more hydrophilic in nature. The peptide is dissolved and injected with a constant flow of mobile phase into a column, the stationary phase. After several minutes the gradient of the mobile phase is shifted towards a more hydrophobic end. The peptide and its impurities bound to the column then each have their own 'sweet spot' of hydrophobicity where they will start prefering the mobile phase over the column and they will elute. This principle is used to separate the peptide of interest from any unwanted side-products from synthesis.
 
 ## UPLC
+To analyze the purity of the peptides
+## Ion Chromatography
 
 ## DELPHI
 The DELPHI platform is AelinTx's source for data and information related to ongoing research and development activities. It is a tool build upon the [DISQOVER](https://www.ontoforce.com/platform/disqover/) semantic search platform that enables researchers and managers to quickly find the data they need from the ELN stored. DELPHI's main strength is its flexibility to adapt to any data source, trough the use of python coding, without disrupting the data flow. Additionally some routines can be written to expedite data analysis.
@@ -70,7 +72,7 @@ The DELPHI platform is AelinTx's source for data and information related to ongo
 ## Personal Development <a name="pers-dev"></a>
 **Concept of learning outcome**
 
-Over the course of the traineeship, gain the skills and experience needed to familiarize myself with the DELPHI ELN-platform help it grow by adding pre-processing, data uploading and curating subroutines to the pipeline to support my colleagues with their data management.
+Over the course of the traineeship, I will gain the skills and experience needed to familiarize myself with the DELPHI ELN-platform to help it grow by adding pre-processing, data uploading and curating subroutines to the pipeline. This will support my colleagues with their data management and allow for more reproducible experiments.
 
 **Development activities**
 
@@ -80,9 +82,17 @@ Over the course of the traineeship, gain the skills and experience needed to fam
 
 **Desired results**
 
-- Learn the ins and puts of pandas
+- Learn the ins and outs of pandas
 - Process .txt, .xml files to extract the relevant information and upload it in a structured, curated manner
 - Clearly communicate expectations, possibilities and changes related to projects to stakeholders and work together to achieve the best solution.
+
+**Schedule**
+
+The different activities run in parallel as they're heavily intertwined and give feedback to one another.
+
+**Nescessary support and facilities**
+
+Feedback is given when needed or whenever I feel stuck with a certain problem by the external coordinator. The course units of BIT provide support in handling issues (eg: Databases & Data Management, Python Scripting, Data Visualization).
 
 # Tasks <a name="tasks"></a>
 ## Exploration of raw data formats from HPLC instrument <a name="task1"></a>
