@@ -44,7 +44,7 @@ Different tasks are listed at the start of the ETN and linked to their respectiv
 
 **Accessible**
 
-The ETN is publicly available adn a link is shared with the project coordinators. The repository of the code is stored in a private git repository that requires authentication and only the project coordinators will be allowed access as some of the data stored is not meant to be publicized.
+The ETN is publicly available and a link is shared with the project coordinators. The repository of the code is stored in a private git repository that requires authentication and only the project coordinators will be allowed access as some of the data stored is not meant to be publicized.
 
 **Interoperable**
 
@@ -52,7 +52,7 @@ Where possible a link to code written for the traineeship is supplied at the sta
 
 **Reusable**
 
-The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In codes or sequences, or any other identifiers that could allude to this data.
+The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In codes or sequences, or any other identifiers that could allude to this data and it is therefore licensed under MIT.
 
 ## Traceability of Steps and Methods <a name="TDP3"></a>
 This git repository markdown page will be used to document the project steps and changes in the project in a traceable manner.
