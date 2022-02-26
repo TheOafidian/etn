@@ -12,7 +12,7 @@
     4.5. [Exploration raw UPLC data](#task5) ✔️  
     4.6. [Align on need for UPLC data upload format](#task6) 🔲  
     4.7. [Meta-Analysis UPLC data](#task7) 🔲   
-    4.8. [Upload Ion Chromatography data](#task8) 🔲
+    4.8. [Upload Ion Chromatography data](#task8)✔️
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -30,12 +30,13 @@
 ## Data Management
 Data about the progress of the traineeship project will be stored according to the FAIR principles in this ETN.
 - Findable
-Different tasks are listed at the start of the ETN and linked to their respective headers within the ETN. Where possible a link to code written for the traineeship is supplied at the start of the task. 
+Different tasks are listed at the start of the ETN and linked to their respective headers within the ETN.  
 - Accessible
 The ETN is publicly available adn a link is shared with the project coordinators. The repository of the code is stored in a private git repository that requires authentication and only the project coordinators will be allowed access as some of the data stored is not meant to be publicized.
 - Interoperable
-
+Where possible a link to code written for the traineeship is supplied at the start of the task.
 - Reusable
+The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In codes or sequences, or any other identifiers that could allude to this data.
 
 ## Traceability of Steps and Methods
 This git repository markdown page will be used to document the project steps and changes in the project in a traceable manner.
@@ -98,6 +99,12 @@ Fixed issues testing visitor script on local computer. Issue not clearly defined
 
 Script was appended with new methods and debugged to a workable state. More finetuning needed by adding a lookup file before execution of the script. The script now generates plots for all the peptides in a .lcra file. It uses a standard gradient (can be improved by selecting the right gradient) for now as most often the HPLC runs use the same gradient and identifying the gradient with the run proves not to be straightforward, as gradients of preparatory and finishing gradients are also recorded. The plots look good on most runs, altough some seem to be missing fractions (to be investigated). The plots could also be prettified further.
 
+### 22/02/2022:
+Using pandas to read the data from the xml-like files is memory intensive and requires changing some lines of code in the pandas library. Therefore a re-write of the code to use a personalized handler that only extracts the needed data from the xml file in one go is initiated.
+
+### 24/02/2022:
+Finalizing the reader. Started linking the data to the Chromatogram class, which needs a rework to ift with the new structure.
+
 ## Deal with compressed .lcra raw HPLC files. <a name="task4"></a>
 ### 03/02/2022:
 Some .lcra files exported from the machine undergo a compression to reduce the impact fo their size on the system. 
@@ -108,6 +115,9 @@ Some settings in the data acquisition could help generate reports with the neede
 
 ### 08/02/2022:
 Asked to contact the company providing the sql database interaction from the software.
+
+### 24/02/2022:
+Response from the supplier. There is a special module for sale that could extract the data in a non encrypted format. Discussion for the need of this investment is needed.
 
 ## Exploration raw UPLC Data. <a name="task5"></a>
 ### 08/02/2022:
@@ -132,16 +142,25 @@ A bash script was written to pick up and put together the files from a list of e
 ### 17/02/2022:
 A first exploratory visual analysis of the data reveals some differences between both readings for some samples. The distribution of the differences was tested for normalcy and the null hypothesis that the distribution was normal was rejected at a significance of 0.05.
 
+### 22/02/2022:
+A second set of same sample readings was analyzed. Here the differences between both reading are normally distributed. A student t-test confirms that the difference between both datasets of the same sample is significant. Purities calculated by both methods for different samples show no significant difference accoring to a Wilcoxon's signed rank test.  
+
 ## Upload Ion Chromatography data to DELPHI platform <a name="task8"></a>
 ### 15/02/2022:
 A basic scheme for uploading data on the resulting ion percentages from ion chromatography experiments is made to allow upload onto the DELPHI platform. Upload schemes consist of excel sheets defining input and output fields for the data that is read from an excel template. These schemes are used by the internal logic of DELPHI in the form of python script to pre-process, ingest and display the data on the web platform.
 
 Some basic logic is added to the script to preprocess the data.
 
-## 17/02/2022:
+### 17/02/2022:
 The scheme is updated with fields for the date of upload, the person uploading the data and the location of the data to ensure traceability.
 
 The internal logics are also polished with some data validation and cleanup to allow a more robust pre-processing. Ideas for future improvements: classification by main ion, comparison of salt_state vs experimental_salt_state.
+
+### 22/02/2022:
+Testing the code on the production server led to errors involving the merging of the IC data to the batch data. The code was rewritten in a more memory efficient way and the joining of the dataframes was adapted to not produce any errors.
+
+### 24/02/2022:
+THe code was tested on the production serrver and yielded no errors. The change was communicated to the rest of the team and data upload was initiated.
 
 
 [//]: # (Intermediate Evaluation Traineeship)
