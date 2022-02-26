@@ -61,7 +61,8 @@ Links to scripts pertaining to tasks and subtasks of the traineeship will be pro
 For the purification of the peptides manufactured in the lab, a method on a Reverse Phase High Performance Liquid Chromatography (RP-HPLC) system is used. The reverse phase points to the fact that a hydrophobic stationary phase is used, while the mobile phase initially is more hydrophilic in nature. The peptide is dissolved and injected with a constant flow of mobile phase into a column, the stationary phase. After several minutes the gradient of the mobile phase is shifted towards a more hydrophobic end. The peptide and its impurities bound to the column then each have their own 'sweet spot' of hydrophobicity where they will start prefering the mobile phase over the column and they will elute. This principle is used to separate the peptide of interest from any unwanted side-products from synthesis.
 
 ## UPLC
-To analyze the purity of the peptides
+To analyze the purity of the peptides, an Ultra High Performance Liquid Chromatography (UPLC) system is used. It's concepts and inner workings are essentially the same as that of the HPLC, save for the higher pressure used in this system and the denser column material. This makes for a more efficient separation of analytes, but a higher retention time. This makes the system ideal for analytical purpose, while the HPLC is used for preparative purposes.
+
 ## Ion Chromatography
 
 ## DELPHI
@@ -195,7 +196,7 @@ The internal logics are also polished with some data validation and cleanup to a
 Testing the code on the production server led to errors involving the merging of the IC data to the batch data. The code was rewritten in a more memory efficient way and the joining of the dataframes was adapted to not produce any errors.
 
 ### 24/02/2022:
-THe code was tested on the production serrver and yielded no errors. The change was communicated to the rest of the team and data upload was initiated.
+The code was tested on the production server and yielded no errors. The change was communicated to the rest of the team and data upload was initiated.
 
 
 [//]: # (Intermediate Evaluation Traineeship)
