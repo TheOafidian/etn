@@ -1,18 +1,23 @@
 # Electronic Traineeship Notebook (ETN)
 
 ## Table of Contents
-1. [Traineeship Documentation Plan](#TDP)
-2. [Background information traineeship topic](#background)
-3. [Personal Development](#pers-dev)
+1. [Traineeship Documentation Plan](#TDP)   
+    1.1. [Tentative Planning](#TDP1)    
+    1.2. [Data Management](#TDP2)   
+    1.3. [Traceability of Steps and Methods](#TDP3)  
+    1.4. [Version Control of Code](#TDP4)   
+2. [Background information traineeship topic](#background)  
+3. [Reflection and self-directed behaviour](#refl)  
+    3.1 [Personal Development](#pers-dev)   
 4. [Tasks](#tasks)  
-    4.1. [Exploration of raw data formats from HPLC instrument](#task1) ✔️  
-    4.2. [Download and install DELPHI repository](#task2) ✔️  
-    4.3. [Create a "visitor" for raw HPLC data and generate tsv file](#task3) 🔲  
-    4.4. [Deal with compressed data HPLC files](#task4) 🔲  
-    4.5. [Exploration raw UPLC data](#task5) ✔️  
-    4.6. [Align on need for UPLC data upload format](#task6) 🔲  
-    4.7. [Meta-Analysis UPLC data](#task7) 🔲   
-    4.8. [Upload Ion Chromatography data](#task8)✔️
+    4.1. [✔️Exploration of raw data formats from HPLC instrument](#task1)   
+    4.2. [✔️Download and install DELPHI repository](#task2)   
+    4.3. [🔲Create a "visitor" for raw HPLC data and generate tsv file](#task3)   
+    4.4. [🔲Deal with compressed data HPLC files](#task4)   
+    4.5. [✔️Exploration raw UPLC data](#task5)   
+    4.6. [🔲Align on need for UPLC data upload format](#task6)   
+    4.7. [🔲Meta-Analysis UPLC data](#task7)    
+    4.8. [✔️Upload Ion Chromatography data](#task8)
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -21,13 +26,16 @@
 [//]: # (Reflection on International/Intercultural Aspects)
 # Traineeship Documentation Plan <a name="TDP"></a>
 
-## Tentative Planning
+## Tentative Planning <a name="TDP1"></a>
 - Look into DELPHI the Disqover data platform that serves as AelinTx's one stop shop for data on research & development activities. -> Current priority
+- Upload external Ion Chromatography data -> finished 26/02
+- Build further robustness and pre-analysis IC data -> End of March
+- HPLC vistor script -> Beginning of March
+- Upload of UPLC data -> starting in April
 - Find a way to decompress .lcra files. -> Halfway through the traineeship?
-- Upload of UPLC data -> in a few weeks
-- Upload external Ion Chromatography data -> prioritized
 
-## Data Management
+
+## Data Management <a name="TDP2"></a>
 Data about the progress of the traineeship project will be stored according to the FAIR principles in this ETN.
 - Findable
 Different tasks are listed at the start of the ETN and linked to their respective headers within the ETN.  
@@ -38,10 +46,10 @@ Where possible a link to code written for the traineeship is supplied at the sta
 - Reusable
 The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In codes or sequences, or any other identifiers that could allude to this data.
 
-## Traceability of Steps and Methods
+## Traceability of Steps and Methods <a name="TDP3"></a>
 This git repository markdown page will be used to document the project steps and changes in the project in a traceable manner.
 
-## Version Control of Code
+## Version Control of Code <a name="TDP4"></a>
 
 The code will be stored in [this private git repository](https://github.com/TVR-AelinTX/traineeship). 
 Access will be given to the internal and external traineeship coordinators before the start of the traineeship. 
@@ -57,7 +65,24 @@ For the purification of the peptides manufactured in the lab, a method on a Reve
 ## DELPHI
 The DELPHI platform is AelinTx's source for data and information related to ongoing research and development activities. It is a tool build upon the [DISQOVER](https://www.ontoforce.com/platform/disqover/) semantic search platform that enables researchers and managers to quickly find the data they need from the ELN stored. DELPHI's main strength is its flexibility to adapt to any data source, trough the use of python coding, without disrupting the data flow. Additionally some routines can be written to expedite data analysis.
 
-[//]: # Personal Development <a name="pers-dev"></a>
+# Reflection and self-directed behaviour <a name="refl"></a>
+
+## Personal Development <a name="pers-dev"></a>
+**Concept of learning outcome**
+
+Over the course of the traineeship, gain the skills and experience needed to familiarize myself with the DELPHI ELN-platform help it grow by adding pre-processing, data uploading and curating subroutines to the pipeline to support my colleagues with their data management.
+
+**Development activities**
+
+- Python scripting: pandas, file IO
+- Teamwork and communication: meetings with stakeholders, git
+- Data visualization: R and Python, dashboards in DELPHI
+
+**Desired results**
+
+- Learn the ins and puts of pandas
+- Process .txt, .xml files to extract the relevant information and upload it in a structured, curated manner
+- Clearly communicate expectations, possibilities and changes related to projects to stakeholders and work together to achieve the best solution.
 
 # Tasks <a name="tasks"></a>
 ## Exploration of raw data formats from HPLC instrument <a name="task1"></a>
