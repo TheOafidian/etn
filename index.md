@@ -11,13 +11,14 @@
     3.1 [Personal Development](#pers-dev)   
 4. [Tasks](#tasks)  
     4.1. [✔️Exploration of raw data formats from HPLC instrument](#task1)   
-    4.2. [✔️Download and install DELPHI repository](#task2)   
-    4.3. [🔲Create a "visitor" for raw HPLC data and generate tsv file](#task3)   
-    4.4. [🔲Deal with compressed data HPLC files](#task4)   
+    4.2. [✔️Download and install DELPHI repository](#task2)     
+    4.3. [❌Create a "visitor" for raw HPLC data and generate tsv file](#task3)   
+    4.4. [❌ Deal with compressed data HPLC files](#task4)   
     4.5. [✔️Exploration raw UPLC data](#task5)   
     4.6. [🔲Align on need for UPLC data upload format](#task6)   
     4.7. [🔲Meta-Analysis UPLC data](#task7)    
     4.8. [✔️Upload Ion Chromatography data](#task8)
+    4.9. [🔲Generate PDFs from UPLC data](#task9)
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -149,6 +150,9 @@ Using pandas to read the data from the xml-like files is memory intensive and re
 ### 24/02/2022:
 Finalizing the reader. Started linking the data to the Chromatogram class, which needs a rework to ift with the new structure.
 
+### 01/03/2022: 
+Work on the HPLC data was shelved in favor for looking at the UPLC data.
+
 ## Deal with compressed .lcra raw HPLC files. <a name="task4"></a>
 ### 03/02/2022:
 Some .lcra files exported from the machine undergo a compression to reduce the impact fo their size on the system. 
@@ -162,6 +166,9 @@ Asked to contact the company providing the sql database interaction from the sof
 
 ### 24/02/2022:
 Response from the supplier. There is a special module for sale that could extract the data in a non encrypted format. Discussion for the need of this investment is needed.
+
+### 01/03/2022:
+It was decided not to purchase the module after further discussion. The work on the HPLC data was put on hold, as the fraction of uncompressed data is minimal compared to that of the compressed data. 
 
 ## Exploration raw UPLC Data. <a name="task5"></a>
 ### 08/02/2022:
@@ -209,6 +216,9 @@ Testing the code on the production server led to errors involving the merging of
 ### 24/02/2022:
 The code was tested on the production server and yielded no errors. The change was communicated to the rest of the team and data upload was initiated.
 
+## Generate PDFs UPLC data <a name="task9"></a>
+### 01/03/2022:
+An automated method to generate certificates of analysis from the data obtained by UPLC...
 
 [//]: # (Intermediate Evaluation Traineeship)
 
