@@ -17,7 +17,7 @@
     4.5. [✔️Exploration raw UPLC data](#task5)   
     4.6. [🔲Align on need for UPLC data upload format](#task6)   
     4.7. [🔲Meta-Analysis UPLC data](#task7)    
-    4.8. [✔️Upload Ion Chromatography data](#task8)
+    4.8. [✔️Upload Ion Chromatography data](#task8)     
     4.9. [🔲Generate PDFs from UPLC data](#task9)
 
 [//]: # (Intermediate Evaluation Traineeship)
@@ -218,7 +218,17 @@ The code was tested on the production server and yielded no errors. The change w
 
 ## Generate PDFs UPLC data <a name="task9"></a>
 ### 01/03/2022:
-An automated method to generate certificates of analysis from the data obtained by UPLC...
+An automated method to generate certificates of analysis from the data obtained by UPLC would be a useful implementation for the company. 
+
+The backbones for the script are tested out and written in [this jupyter notebook](https://github.com/TVR-AelinTX/traineeship/blob/main/data_exploration/UPLC/UPLC%20DATA%20exploration.ipynb). The means to extract the raw data from .txt files are written and a first small pdf was generated.
+
+### 03/03/2022:
+A more thorough pdf generation backbone script was made using reportlab. It takes variables from the delphi tables to supplement the raw data with other compound and batch related properties.
+
+### 07/03/2022:
+Incorporation of pieces of the code into DELPHI started. The process is as follows: a visitor script will scrape the ELN for new raw UPLC data (posted in a monthly folder) and retrieve relevant data needed for the report. It will also generate a chromatogram and save it to the server to be displayed on DELPHI and included in the report.
+
+After this, an operation will join tables from batches, compounds and the uplc data to get all the relevant data for the report. This data is then fed to a function that generates the report. The function is wrapped by a method that keeps track of any changes and only runs the code when there are changes. 
 
 [//]: # (Intermediate Evaluation Traineeship)
 
