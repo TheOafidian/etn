@@ -15,10 +15,10 @@
     4.3. [❌Create a "visitor" for raw HPLC data and generate tsv file](#task3)   
     4.4. [❌ Deal with compressed data HPLC files](#task4)   
     4.5. [✔️Exploration raw UPLC data](#task5)   
-    4.6. [🔲Align on need for UPLC data upload format](#task6)   
+    4.6. [✔️Align on need for UPLC data upload format](#task6)   
     4.7. [🔲Meta-Analysis UPLC data](#task7)    
     4.8. [✔️Upload Ion Chromatography data](#task8)     
-    4.9. [🔲Generate PDFs from UPLC data](#task9)
+    4.9. [✔️Generate PDFs from UPLC data](#task9)
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -73,6 +73,8 @@ For the purification of the peptides manufactured in the lab, a method on a Reve
 To analyze the purity of the peptides, an Ultra High Performance Liquid Chromatography (UPLC) system is used. It's concepts and inner workings are essentially the same as that of the HPLC, save for the higher pressure used in this system and the denser column material. This makes for a more efficient separation of analytes, but a higher retention time. This makes the system ideal for analytical purpose, while the HPLC is used for preparative purposes.
 
 ## Ion Chromatography
+Another main source of variability between different peptide batches are the ion contents. Three ion types are analyzed in the lab (TFA, acetate and chloride) as these three are routinely used as counterions for the peptides. The software and principle are similar to the UPLC, except that the column now binds and separates ions with the use of positively charged beads that slow elution of the negative ions. 
+
 
 ## DELPHI
 The DELPHI platform is AelinTx's source for data and information related to ongoing research and development activities. It is a tool build upon the [DISQOVER](https://www.ontoforce.com/platform/disqover/) semantic search platform that enables researchers and managers to quickly find the data they need from the ELN stored. DELPHI's main strength is its flexibility to adapt to any data source, trough the use of python coding, without disrupting the data flow. Additionally some routines can be written to expedite data analysis.
@@ -92,7 +94,7 @@ Over the course of the traineeship, I will gain the skills and experience needed
 
 **Desired results**
 
-- Learn the ins and outs of pandas
+- Automatically generate a pdf summarizing some of the QC results of the lab in a clean and orderly manner.
 - Process .txt, .xml files to extract the relevant information and upload it in a structured, curated manner
 - Clearly communicate expectations, possibilities and changes related to projects to stakeholders and work together to achieve the best solution.
 
@@ -184,6 +186,9 @@ The possibility of uploading the UPLC data was discussed and the QC representati
 ### 15/02/2022:
 The need for upload of externally acquired Ion Chromatography data was adressed in a meeting. After sitting together with the external project coordinator, it was decided to work on this first. This is achieved by utilizing upload schemes of the DELPHI platform (xlsx files defining fields of pandas dataframes, templates, etc) and some internal logic.
 
+### 10/03/2022:
+A script was written to automate the transfer of UPLC exported data on the lab instruments in a specified folder to the server. During transfer a "_uplc" tag is provided to the text files as metadata to distinguish the files from raw ic data in the future. 
+
 ## Meta Analysis UPLC data. <a name="task7"></a>
 ### 15/02/2022:
 For two different methods the absorbance is measured at wavelengths 210nm and 216nm respectively. It would be easy to unionize this reading by only looking at one of both wavelengths. Therefore an analysis of previous UPLC runs needs to be made to show that the resulting purity(%) values between the two different wavelength measurements does not differ significantly.
@@ -216,6 +221,12 @@ Testing the code on the production server led to errors involving the merging of
 ### 24/02/2022:
 The code was tested on the production server and yielded no errors. The change was communicated to the rest of the team and data upload was initiated.
 
+### 10/03/2022:
+The presentation of the results was embellished trough the use of html and css and a python script that dynamically allocates colors based on fractions of values. 
+
+### 15/03/2022:
+The formatting was further optimized and the three divs whee joined in a container div with flexbox properties to account for different viewports. Replacing three fields to the data ingestion dataframe by one field of the combined results.
+
 ## Generate PDFs UPLC data <a name="task9"></a>
 ### 01/03/2022:
 An automated method to generate certificates of analysis from the data obtained by UPLC would be a useful implementation for the company. 
@@ -229,6 +240,12 @@ A more thorough pdf generation backbone script was made using reportlab. It take
 Incorporation of pieces of the code into DELPHI started. The process is as follows: a visitor script will scrape the ELN for new raw UPLC data (posted in a monthly folder) and retrieve relevant data needed for the report. It will also generate a chromatogram and save it to the server to be displayed on DELPHI and included in the report.
 
 After this, an operation will join tables from batches, compounds and the uplc data to get all the relevant data for the report. This data is then fed to a function that generates the report. The function is wrapped by a method that keeps track of any changes and only runs the code when there are changes. 
+
+### 10/03/2022:
+The pdf generation was further polished and formatting was adapted to ammeliorate more extreme input data (eg. large integration tables).
+
+### 15/03/2022:
+The method for finding the UPLC data was improved to allow for nested directories. An error showed up and was traced to differences in regionality between used computers (lab vs DELPHI server). A date was printed in "%d.%b.%Y" format in German on the lab instrument, which was not recognized by the script on the server. The script was appended with the dateparser library to translate this format.
 
 [//]: # (Intermediate Evaluation Traineeship)
 
