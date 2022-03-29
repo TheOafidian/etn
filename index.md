@@ -18,7 +18,8 @@
     4.6. [✔️Align on need for UPLC data upload format](#task6)   
     4.7. [🔲Meta-Analysis UPLC data](#task7)    
     4.8. [✔️Upload Ion Chromatography data](#task8)     
-    4.9. [✔️Generate PDFs from UPLC data](#task9)
+    4.9. [✔️Generate PDFs from UPLC data](#task9)       
+    4.10.[🔲Add inhouse IC data to pdf generation](#task10)
 
 [//]: # (Intermediate Evaluation Traineeship)
 
@@ -28,12 +29,14 @@
 # Traineeship Documentation Plan <a name="TDP"></a>
 
 ## Tentative Planning <a name="TDP1"></a>
-- Look into DELPHI the Disqover data platform that serves as AelinTx's one stop shop for data on research & development activities. -> Current priority
+- Look into DELPHI the Disqover data platform that serves as AelinTx's one stop shop for data on research & development activities. -> Continuous
 - Upload external Ion Chromatography data -> finished 26/02
-- Build further robustness and pre-analysis IC data -> End of March
-- HPLC vistor script -> Beginning of March
-- Upload of UPLC data -> starting in April
-- Find a way to decompress .lcra files. -> Halfway through the traineeship?
+- Build further robustness and pre-analysis IC data -> Finished 21/03
+- HPLC vistor script -> Stopped
+- Upload of UPLC data -> Finished 21/03
+- Find a way to decompress .lcra files. -> Stopped
+- Increase robustness PDF generation -> Current Priority
+- Appending IC data to PDF generation -> Second priority; aim to finish in middle April
 
 
 ## Data Management <a name="TDP2"></a>
@@ -53,7 +56,7 @@ Where possible a link to code written for the traineeship is supplied at the sta
 
 **Reusable**
 
-The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In codes or sequences, or any other identifiers that could allude to this data and it is therefore licensed under MIT.
+The code repository is private, as the data used is confidential in nature. Descriptions in the ETN do not include any confidential data such as Pept-In:tm: codes or sequences, or any other identifiers that could allude to this data and it is therefore licensed under MIT.
 
 ## Traceability of Steps and Methods <a name="TDP3"></a>
 This git repository markdown page will be used to document the project steps and changes in the project in a traceable manner.
@@ -227,6 +230,7 @@ The presentation of the results was embellished trough the use of html and css a
 ### 15/03/2022:
 The formatting was further optimized and the three divs whee joined in a container div with flexbox properties to account for different viewports. Replacing three fields to the data ingestion dataframe by one field of the combined results.
 
+
 ## Generate PDFs UPLC data <a name="task9"></a>
 ### 01/03/2022:
 An automated method to generate certificates of analysis from the data obtained by UPLC would be a useful implementation for the company. 
@@ -246,6 +250,28 @@ The pdf generation was further polished and formatting was adapted to ammeliorat
 
 ### 15/03/2022:
 The method for finding the UPLC data was improved to allow for nested directories. An error showed up and was traced to differences in regionality between used computers (lab vs DELPHI server). A date was printed in "%d.%b.%Y" format in German on the lab instrument, which was not recognized by the script on the server. The script was appended with the dateparser library to translate this format.
+
+### 17/03/2022:
+A button was styled in html and css to allow viewing the pdf from the batches dashboard. The code was tested on the sandbox server and a few bugs were fixed after testing. 
+
+### 21/03/2022:
+Some of the images urls did not allow for viewing the UPLC chromatograms. This was due to a '#' in the filename which causes the url not to function properly. The '#'s were replaced by 'n's in the script before url generation to allow the chromatograms to be displayed. The way of merging the UPLC data with the batch data in pandas was also adapted to prevent duplication of batches.
+
+## 24/03/2022:
+The code was wrapped in some error handling to report different parts of the code where things could go awry.
+
+## Add inhouse IC data to pdf generation
+
+### 21/03/2022:
+The Ion Chromatography data was explored initially. The program used to process and export the IC data, Chromeleon, is the same as for the UPLC. This way a similar workflow could be set up to get the data exported to the server and read in by Delphi.
+
+Some settings needed to be changed on the Chromeleon software to allow a one-click export by the user. Structure of the saved runs was also copied to that of the UPLC data, for inner consistency.
+
+## 24/03/2022:
+A bash script was written to transfer the data exported to the backport in the server to a permanent place in the server. During transfer an '_ic' metatag is added to the filenames.
+
+Further preprocessing of the IC data was worked on in a jupyter notebook.
+
 
 [//]: # (Intermediate Evaluation Traineeship)
 
