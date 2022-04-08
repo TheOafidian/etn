@@ -19,8 +19,9 @@
     4.7. [🔲 Meta-Analysis UPLC data](#task7)    
     4.8. [✔️ Upload Ion Chromatography data](#task8)     
     4.9. [✔️ Generate PDFs from UPLC data](#task9)       
-    4.10. [🔲 Add inhouse IC data to pdf generation](#task10)
-    4.11. [✔️ Establish IC data as new cannonical type on DELPHI](#task11)
+    4.10. [🔲 Add inhouse IC data to pdf generation](#task10)       
+    4.11. [✔️ Establish IC data as new cannonical type on DELPHI](#task11)      
+
 [//]: # (Intermediate Evaluation Traineeship)
 
 [//]: # (Self Assessment at the End of Traineeship)
