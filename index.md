@@ -10,17 +10,17 @@
 3. [Reflection and self-directed behaviour](#refl)  
     3.1 [Personal Development](#pers-dev)   
 4. [Tasks](#tasks)  
-    4.1. [✔️Exploration of raw data formats from HPLC instrument](#task1)   
-    4.2. [✔️Download and install DELPHI repository](#task2)     
+    4.1. [✔️ Exploration of raw data formats from HPLC instrument](#task1)   
+    4.2. [✔️ Download and install DELPHI repository](#task2)     
     4.3. [❌Create a "visitor" for raw HPLC data and generate tsv file](#task3)   
     4.4. [❌ Deal with compressed data HPLC files](#task4)   
-    4.5. [✔️Exploration raw UPLC data](#task5)   
-    4.6. [✔️Align on need for UPLC data upload format](#task6)   
-    4.7. [🔲Meta-Analysis UPLC data](#task7)    
-    4.8. [✔️Upload Ion Chromatography data](#task8)     
-    4.9. [✔️Generate PDFs from UPLC data](#task9)       
-    4.10.[🔲Add inhouse IC data to pdf generation](#task10)
-
+    4.5. [✔️ Exploration raw UPLC data](#task5)   
+    4.6. [✔️ Align on need for UPLC data upload format](#task6)   
+    4.7. [🔲 Meta-Analysis UPLC data](#task7)    
+    4.8. [✔️ Upload Ion Chromatography data](#task8)     
+    4.9. [✔️ Generate PDFs from UPLC data](#task9)       
+    4.10. [🔲 Add inhouse IC data to pdf generation](#task10)
+    4.11. [✔️ Establish IC data as new cannonical type on DELPHI](#task11)
 [//]: # (Intermediate Evaluation Traineeship)
 
 [//]: # (Self Assessment at the End of Traineeship)
@@ -257,21 +257,42 @@ A button was styled in html and css to allow viewing the pdf from the batches da
 ### 21/03/2022:
 Some of the images urls did not allow for viewing the UPLC chromatograms. This was due to a '#' in the filename which causes the url not to function properly. The '#'s were replaced by 'n's in the script before url generation to allow the chromatograms to be displayed. The way of merging the UPLC data with the batch data in pandas was also adapted to prevent duplication of batches.
 
-## 24/03/2022:
+### 24/03/2022:
 The code was wrapped in some error handling to report different parts of the code where things could go awry.
 
-## Add inhouse IC data to pdf generation
+## Add inhouse IC data to pdf generation <a name="task10"></a>
 
 ### 21/03/2022:
 The Ion Chromatography data was explored initially. The program used to process and export the IC data, Chromeleon, is the same as for the UPLC. This way a similar workflow could be set up to get the data exported to the server and read in by Delphi.
 
 Some settings needed to be changed on the Chromeleon software to allow a one-click export by the user. Structure of the saved runs was also copied to that of the UPLC data, for inner consistency.
 
-## 24/03/2022:
+### 24/03/2022:
 A bash script was written to transfer the data exported to the backport in the server to a permanent place in the server. During transfer an '_ic' metatag is added to the filenames.
 
 Further preprocessing of the IC data was worked on in a jupyter notebook.
 
+### 29/03/2022:
+
+The script for handling the IC data was incorporated into DELPHI and tested on the sandbox.
+
+### 07/04/2022:
+
+Incorporation of the IC data into the generated PDFs. Formatting of the figures and pdf.
+
+## Establish IC data as new cannonical type on DELPHI <a name="task11"></a>
+
+### 29/03/2022:
+
+It was decided to make the IC data their own category of data on DELPHI, to accomodate comparison of different measurements (on different dates, different technical replicates or from different sources). Code was refactored to create this new cannonical type and add the IC data to it.
+
+## 31/03/2022:
+
+The code was refactored further and the data was linked to batches and vice versa. Changes were tested on sandbox and further polishing of the code was done.
+
+## 05/04/2022:
+
+The dashboard on the sandbox server was adapted to properly display the IC data in its new cannonical type (front end).  
 
 [//]: # (Intermediate Evaluation Traineeship)
 
