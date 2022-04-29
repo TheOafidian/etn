@@ -19,8 +19,10 @@
     4.7. [🔲 Meta-Analysis UPLC data](#task7)    
     4.8. [✔️ Upload Ion Chromatography data](#task8)     
     4.9. [✔️ Generate PDFs from UPLC data](#task9)       
-    4.10. [🔲 Add inhouse IC data to pdf generation](#task10)       
+    4.10. [✔️ Add inhouse IC data to pdf generation](#task10)       
     4.11. [✔️ Establish IC data as new cannonical type on DELPHI](#task11)         
+    4.12. [🔲Membrane Assay Preprocessing and analysis](#task12)
+    4.13. [✔️ Batch mass /volume calculator app](#task13)
 
 
 [//]: # (Intermediate Evaluation Traineeship)
@@ -288,13 +290,60 @@ Incorporation of the IC data into the generated PDFs. Formatting of the figures 
 
 It was decided to make the IC data their own category of data on DELPHI, to accomodate comparison of different measurements (on different dates, different technical replicates or from different sources). Code was refactored to create this new cannonical type and add the IC data to it.
 
-## 31/03/2022:
+### 31/03/2022:
 
 The code was refactored further and the data was linked to batches and vice versa. Changes were tested on sandbox and further polishing of the code was done.
 
-## 05/04/2022:
+### 05/04/2022:
 
 The dashboard on the sandbox server was adapted to properly display the IC data in its new cannonical type (front end).  
+
+### 12/04:
+
+The IC data standard curves were polished and a typo in the parameters of the script was corrected. The PDF layout was uniformized to have a more cohesive look and feel. A workflow was written for uploading the IC raw data to the ELN.
+
+## Membrane Assay Preprocessing and analysis <a name="task12"></a>
+
+### 14/04/2022:
+
+It was proposed to have a look at membrane disruption data for the second half of the internship as the pdf generation project was comming to an end. The experiments are done in 96 well plates. Data needed for these experiments comes from two sources that should be linked to eachother: the raw data with the absorbance readings of the experiment and then some sort of template to be designed that indicates what sample corresponds to which well. 
+
+### 19/04/2022:
+
+The initial thought was to design a template that looks like a well plate to easily assign a sample per well and keep an overview of the plate. Due to the many different conditions possible between wells during an experiment (concentration, sample, buffer, membrane type, ...) an alternative aproach was chose to define well per well these variables. Some logic was thought out to allow designing ranges of dilution series, to allow for more efficient data entry. Regular expression was used to make a list of well numbers or letters from a string using following syntax:
+
+A:E -> [A,B,C,D,E]
+A&E -> [A,E]
+
+Combining these with dilution series of the same length, a pandas explode forms a dataframe of the ranges that can be used to define samples well per well.
+
+### 21/04/2022:
+
+Plots were generated of the test data. Data was grouped per compound, concentration and batch and then the means of the replicates was used for plotting. A script was wrtitten that plots per compound the different concentrations in another color and displays the sample with the max absorbance (lysed membrane) and a negative control (membrane without disruption).
+
+### 26/04/2022:
+
+The averages of the measurements were smoothed using [scipy.signal.medfilt](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.medfilt.html). The results of these filter are compared to the original using a find_peaks call. If the resulting amount of peaks is the same or only 1 less peak is found the peak is labeled as a 'bad peak' with too much signal noise and it is displayed in gray and pushed to the back of the plotting layer.
+
+A strategy was searched for to try and mitigate these 'bad peaks' by removing noisy measurements from the averaging done in pandas, but no strategy was found yet.
+
+### 29/04/2022:
+
+Refactoring of the code to the operations level of DELPHI to allow a more centralized processing of plate reader experiments.
+
+## Batch mass /volume calculator app <a name="task13"></a>
+
+### 21/04/2022:
+
+The idea was proposed to add a calculator to our batches of compound on the ELN that takes into account the molarity of the compound and (in the future) the net peptide compound of our batches to allow for correct weighing and dilluting of the compounds for experiments. The idea was to add a html div with some Javascript code and dynamically add information of the batches/compounds from the ELN through Python. 
+
+### 26/04/2022:
+
+A first draft of the calculator was [written a codepen](https://codepen.io/TheOafidian/pen/VwygRvj) that already includes the brunt of the JS, the html structure and styling done using [bootstrap](https://getbootstrap.com/) as not to waste too much time on styling.
+
+### 29/04/2022:
+
+Code injection could be kept to a minimum by inserting the calculator as an iframe with as source an html page including the js logic. The dynamic parameters can be supplied to the script using a query (eg: src="calculator.html?mw=2000&npc=0.75").  
 
 [//]: # (Intermediate Evaluation Traineeship)
 
