@@ -21,8 +21,8 @@
     4.9. [✔️ Generate PDFs from UPLC data](#task9)       
     4.10. [✔️ Add inhouse IC data to pdf generation](#task10)       
     4.11. [✔️ Establish IC data as new cannonical type on DELPHI](#task11)         
-    4.12. [🔲Membrane Assay Preprocessing and analysis](#task12)
-    4.13. [✔️ Batch mass /volume calculator app](#task13)
+    4.12. [🔲Membrane Assay Preprocessing and analysis](#task12)        
+    4.13. [✔️ Batch mass /volume calculator app](#task13)       
 
 
 [//]: # (Intermediate Evaluation Traineeship)
