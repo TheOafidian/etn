@@ -345,7 +345,8 @@ A first draft of the calculator was [written a codepen](https://codepen.io/TheOa
 
 Code injection could be kept to a minimum by inserting the calculator as an iframe with as source an html page including the js logic. The dynamic parameters can be supplied to the script using a query (eg: src="calculator.html?mw=2000&npc=0.75").  
 
-<iframe src="https://htmlpreview.github.io/?https://github.com/TVR-AelinTX/calc_example/blob/main/calc.html?mw=2000&npc=0.75" scrolling='no' style="border: none;" height='500px' width="400px"></iframe>
+#### Interactive example
+<iframe src="https://htmlpreview.github.io/?https://github.com/TVR-AelinTX/calc_example/blob/main/calc.html?mw=2000&npc=0.75" scrolling='no' style="border: none;" height='400px' width="500px"></iframe>
 [source code](https://github.com/TVR-AelinTX/traineeship/blob/main/batch_calculator/Calculator.html)
 
 [//]: # (Intermediate Evaluation Traineeship)
