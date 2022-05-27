@@ -329,7 +329,38 @@ A strategy was searched for to try and mitigate these 'bad peaks' by removing no
 
 ### 29/04/2022:
 
-Refactoring of the code to the operations level of DELPHI to allow a more centralized processing of plate reader experiments.
+Refactoring of the code to the operations level of DELPHI to allow a more centralized processing of plate reader experiments. Multiple plate reader formats are used by different instruments and this would allow cross-compatibility of parsing different formats for different experiments.
+
+### 03/05/2022:
+
+Filtering out the noisy, 'bad' peaks by calculating the standard deviation on the 80th and 90th percentile absorbance measurements. The curves plateau at the end of the assay in the case of a stable measurement, but at the end of the assay the liposomes are lysed and the signal then further increases to the maximum absorbance value. Therefore it is important to compare these plateaus before the lysis between differen measurements for anomalous noise levels. The mean of the standard deviations of measurements at each concentration of the experiment are calculated and curves with a standard deviation that are at least 1.6 times higher than the mean are marked as 'bad curves', greyed out on the plots and not used in further calculations for the EC50.
+
+### 05/05/2022:
+
+Further refactoring of the preprocessing script for a more readable and organized structure. 
+One plot per sample is generated instead of a summary plot of all the samples.
+
+### 10/05/2022:
+
+Improvements to the plate template syntax for expanding well ranges were made to handle more edge case scenario's.
+ 
+### 12/05/2022:
+
+The area under the curve for the absorbance curves is calculated and normalized versus the triton (maximum signal) and vehicle (background signal) sample areas under the curve.
+An EC50 plot is generated with this normalized AUC versus the log concentration. Historically a five parameter logistic regression was fitted to these curves [using the GraphPad program](https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_asymmetric_dose_response_ec.htm). 
+This logistic regression fit was coded in python using scipy.optimize's curve_fit function with the formula `d + ((a-d) / np.power((1 + np.power((x/c), b)), e))`   
+
+### 17/05/2022:
+
+The plate reader part of the script was refactored to the visitor level, using a new data structure to uniformize the processing of plate assay data further. Mathias had written the visitor as an variant of the standard template visitor used in DELPHI. 
+The visitor was modified with rules on how to deduce which type of plate is used and how to process the raw data file by scraping the metadata.
+
+### 19/05/2022
+
+The code was prepared for a first test in the sandbox environment. Inconsistencies were found during testing between output on the sandbox and local testing. After some searching the plate syntax part of the code seemed to be the culprit as it was using the pandas.explode function on multiple columns. This feature was released in pandas v1.3, while the pandas version running on production and sandbox was pandas 1.1.3.
+An upgrade of pandas was performed to test if this would solve the issue, but it broke other pieces of the code. Therefore it was decided to momentarily cut the plate syntax functionality from the platereader for the time being and reset to pandas v1.1.3.
+
+
 
 ## Batch mass /volume calculator app <a name="task13"></a>
 
