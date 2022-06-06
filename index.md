@@ -84,7 +84,7 @@ Another main source of variability between different peptide batches are the ion
 
 
 ## DELPHI
-The DELPHI platform is AelinTx's source for data and information related to ongoing research and development activities. It is a tool build upon the [DISQOVER](https://www.ontoforce.com/platform/disqover/) semantic search platform that enables researchers and managers to quickly find the data they need from the ELN stored. DELPHI's main strength is its flexibility to adapt to any data source, trough the use of python coding, without disrupting the data flow. Additionally some routines can be written to expedite data analysis.
+The DELPHI platform is AelinTx's source for data and information related to ongoing research and development activities. It is a tool build upon the [DISQOVER](https://www.ontoforce.com/platform/disqover/) semantic search platform that enables researchers and managers to quickly find the data they need from the files stored in the ELN. DELPHI's main strength is its flexibility to adapt to any data source, through the use of python coding, without disrupting the data flow. Additionally, some routines can be written to expedite data analysis.
 
 # Reflection and self-directed behaviour <a name="refl"></a>
 
